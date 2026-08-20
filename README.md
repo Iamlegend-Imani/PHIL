@@ -4,7 +4,7 @@
 
 > Your health is not fragmented. Your health data is.
 
-[Explore the live prototype](https://phil-health-map.imani-kirika116.chatgpt.site) · [Watch the 90-second walkthrough](public/demo/PHIL_90_Second_Walkthrough.mp4) · [Download the one-page brief](public/PHIL_Project_Brief.pdf)
+[Explore the live prototype](https://phil-health-map.imani-kirika116.chatgpt.site) · [Watch the 90-second walkthrough](public/PHIL_90_Second_Walkthrough.mp4) · [Download the one-page brief](public/PHIL_Project_Brief.pdf)
 
 ![PHIL prototype overview](docs/assets/prototype-hero.jpg)
 
