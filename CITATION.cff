@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use or discuss this prototype, please cite it using the metadata below."
+title: "From Signal to Safeguard"
+type: software
+version: 0.1.0
+date-released: 2026-08-19
+authors:
+  - family-names: Kirika
+    given-names: Imani-Faith
+url: "https://from-signal-to-safeguard.imani-kirika116.chatgpt.site/"
+repository-code: "https://github.com/Iamlegend-Imani/from-signal-to-safeguard"
+abstract: "A public AI-cyber governance prototype for translating risk evidence into human-owned escalation paths, safeguards, and auditable decision records."
+keywords:
+  - AI governance
+  - AI safety
+  - cybersecurity
+  - risk management
+  - decision operations
+
