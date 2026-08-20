@@ -1,5 +1,8 @@
 # PHIL
 
+> [!IMPORTANT]
+> **Proprietary source — public for portfolio review only.** Copying, reuse, modification, redistribution, commercialization, and derivative works are prohibited without prior written permission. See [LICENSE](LICENSE).
+
 ### Personal Health Intelligence Layer
 
 > Your health is not fragmented. Your health data is.
@@ -83,18 +86,9 @@ No user outcomes, adoption numbers, clinical improvements, or practitioner endor
 | --- | --- |
 | ![PHIL context map](docs/assets/evidence-workbench.jpg) | ![PHIL decision record](docs/assets/decision-record.jpg) |
 
-## Run it locally
+## Access and permitted use
 
-```bash
-npm install
-npm run dev
-```
-
-For a production build:
-
-```bash
-npm run build
-```
+The live prototype and repository materials may be viewed for portfolio evaluation, research review, and demonstration. The source is not open source. Copying, cloning, reuse, modification, redistribution, commercial use, and creation of derivative works require prior written permission. See the [proprietary notice](LICENSE).
 
 ## Technology
 
@@ -118,6 +112,6 @@ Proof over hype. No invented metrics. No hidden clinical claims.
 
 ## License and responsible use
 
-The source code is available under the [MIT License](LICENSE). The PHIL name, product concept, written methodology, and visual identity remain attributable to Imani Kirika.
+**Proprietary — all rights reserved.** This repository is public for portfolio review and demonstration only. No permission is granted to copy, use, modify, redistribute, commercialize, or create derivative works from the source or accompanying materials, except for the limited rights required by GitHub's Terms of Service. See the [proprietary notice](LICENSE).
 
 This repository is for design exploration and portfolio demonstration. It must not be used for medical advice, diagnosis, treatment, triage, or emergencies.
