@@ -1,5 +1,5 @@
 {
-  "name": "from-signal-to-safeguard",
+  "name": "phil-health-map",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -40,5 +40,5 @@
     "wrangler": "4.92.0"
   },
   "type": "module",
-  "displayName": "From Signal to Safeguard"
+  "displayName": "PHIL | Personal Health Intelligence Layer"
 }

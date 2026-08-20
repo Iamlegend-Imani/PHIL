@@ -1,73 +1,103 @@
 # Roadmap
 
-This roadmap describes proposed research and development, not guaranteed deliverables. Priorities should change when evidence, practitioner feedback, or safety concerns indicate a better direction.
+## Guiding rule
 
-## v0.1: Working prototype
+The next milestone is earned by evidence, not by adding more features.
 
-**Status:** Complete, August 2026
+## Stage 0: Functional concept prototype
 
-- Public responsive interface
-- Three fictional tabletop scenarios
-- Structured evidence and uncertainty intake
-- Transparent deterministic routing
-- Named human ownership and review date
-- Suggested safeguards and reopening conditions
-- Markdown decision-record export
-- Published safety boundaries and starting sources
+**Status: Complete**
 
-## v0.2: Evidence and framework layer
+- Public interactive prototype
+- Fictional patient scenario
+- Context Map, Timeline, Visit Brief, and Human Review flow
+- Visible provenance and uncertainty cues
+- Safety boundaries and methodology
+- Public documentation and review packet
 
-**Proposed:** Weeks 1 to 5 of the pilot
+**What this stage establishes:** The concept can be made tangible and the builder can implement the proposed interaction model.
 
-- Crosswalk public concepts from AISI, CAISI, NIST, Anthropic, and OpenAI
-- Add citations and source traceability to relevant fields
-- Define intended users and institutional decision contexts more precisely
-- Refine scoring labels and document unresolved measurement problems
-- Add a structured exception protocol
-- Add JSON export and a printable record format
-- Publish a change log
+**What it does not establish:** Need, usability, workflow fit, safety performance, adoption, or outcomes.
 
-## v0.3: Tabletop and practitioner testing
+## Stage 1: Need discovery
 
-**Proposed:** Weeks 6 to 8 of the pilot
+**Status: Planned**
 
-- Request feedback from at least five relevant practitioners
-- Target three completed reviews
-- Run at least two structured tabletop tests
-- Compare how users route the same fictional evidence
-- Record disagreements, missing information, failure points, and overhead
-- Test whether the interface exposes uncertainty or disguises it
+- Conduct 5 to 8 patient interviews about current visit-preparation work
+- Conduct 5 to 8 practitioner interviews across relevant settings
+- Map current tools, workarounds, burden, and failure points
+- Test whether the visit-preparation moment is sufficiently important
+- Document disconfirming evidence and alternative problem frames
 
-External reviews depend on practitioner participation and cannot be guaranteed by the project owner alone.
+**Decision gate:** Continue only if the problem is recurrent, consequential, and poorly served by existing workflows.
 
-## v1.0: Revised public toolkit
+## Stage 2: Boundary comprehension
 
-**Proposed:** Weeks 9 and 10 of the pilot
+**Status: Planned**
 
-- Incorporate supported changes from testing
-- Publish the framework crosswalk
-- Publish revised templates and fictional tabletop materials
-- Publish a limitations memo
-- Publish a change log connecting evidence to design changes
-- Make an explicit continue, narrow, pivot, or stop decision
+- Test whether participants can explain what PHIL does and does not do
+- Identify any element mistaken for diagnosis, treatment, urgency, or a complete record
+- Test labels for source, uncertainty, and review status
+- Revise or remove features that create false authority
 
-## Possible future work
+**Decision gate:** No participant should reasonably rely on PHIL for an excluded clinical decision.
 
-Future development should occur only if v1.0 testing supports it.
+## Stage 3: Task-based usability with fictional data
 
-- Additional institutional decision contexts
-- Versioned policy and threshold comparisons
-- Collaboration and review workflows
-- Structured evaluation imports using non-sensitive data
-- Accessibility and usability improvements
-- Independent replication of tabletop findings
+**Status: Planned**
 
-## Success criteria
+- Ask patients to correct a source error
+- Ask patients to remove unwanted context
+- Ask patients to select questions and reject a draft
+- Ask practitioners to locate provenance and unresolved items
+- Test keyboard, screen-reader, zoom, mobile, and plain-language use
 
-- Public, versioned artifacts with primary-source traceability
-- At least two documented fictional tabletop tests
-- Feedback requested from at least five relevant practitioners
-- A target of three completed practitioner reviews
-- A limitations memo and visible change log
-- A documented decision about whether further work is warranted
+**Decision gate:** Participants can exercise control, detect important status cues, and recover from errors.
 
+## Stage 4: Workflow and governance design
+
+**Status: Planned**
+
+- Define whether PHIL is a standalone preparation tool, an embedded feature, or a printable workflow
+- Identify the accountable reviewer role in each setting
+- Define record status, retention, versioning, and integration boundaries
+- Conduct privacy, security, legal, accessibility, and clinical safety review
+- Establish stop criteria and incident procedures
+
+**Decision gate:** The concept can fit without becoming an ungoverned second record or increasing inequity.
+
+## Stage 5: Model-assisted research prototype
+
+**Status: Conditional**
+
+Only if earlier evidence supports the workflow:
+
+- Add one tightly bounded assistive task at a time
+- Begin with source labeling or missing-provenance prompts
+- Build a fictional evaluation set before any real data is considered
+- Test hallucination, source confusion, clinical inference, advice leakage, and demographic performance differences
+- Keep every output editable, traceable, and draft-only
+
+**Decision gate:** The model-assisted version must outperform a simpler non-model workflow on the defined task without crossing the clinical boundary.
+
+## Stage 6: Governed pilot
+
+**Status: Not authorized or scheduled**
+
+A real-data pilot would require appropriate institutional, legal, privacy, security, research, and clinical review. No pilot should begin from this public prototype alone.
+
+## Explicit non-goals
+
+- Building a universal health dashboard before need discovery
+- Competing on the volume of connected data
+- Producing direct-to-consumer diagnosis or treatment advice
+- Adding supplement recommendations or generic protocols
+- Claiming outcomes before a suitable study exists
+- Treating one supportive interview as validation
+
+## Near-term public updates
+
+- Add an attributable practitioner review only after it actually occurs
+- Publish a short change log explaining what feedback changed
+- Add accessibility findings after manual and participant testing
+- Keep the evidence-status table current

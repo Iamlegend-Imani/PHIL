@@ -1,0 +1,47 @@
+1
+00:00:00,000 --> 00:00:07,500
+Your health is not fragmented. Your health data is.
+
+2
+00:00:07,500 --> 00:00:15,000
+PHIL asks what changes when health technology starts with the whole person, not simply the easiest data point.
+
+3
+00:00:15,000 --> 00:00:22,500
+Meet Maya, a fictional patient preparing for a follow-up visit.
+
+4
+00:00:22,500 --> 00:00:30,000
+PHIL brings her story, records, routines, practical limits, and goals into one patient-controlled view.
+
+5
+00:00:30,000 --> 00:00:37,500
+The timeline places events in sequence while keeping every source and uncertainty visible.
+
+6
+00:00:37,500 --> 00:00:45,000
+Timing can guide a better question. It cannot establish cause, diagnosis, or treatment.
+
+7
+00:00:45,000 --> 00:00:52,500
+Maya chooses the questions that belong in her Visit Preparation Brief.
+
+8
+00:00:52,500 --> 00:01:00,000
+Her priorities, budget, and capacity remain part of the story because feasibility matters.
+
+9
+00:01:00,000 --> 00:01:07,500
+Before the brief can be shared, a human verifies identity, sources, patient intent, and uncertainty.
+
+10
+00:01:07,500 --> 00:01:15,000
+Incomplete review blocks approval. Clinical judgment is not delegated.
+
+11
+00:01:15,000 --> 00:01:22,500
+PHIL does not diagnose or prescribe. It organizes, preserves provenance, and prepares the conversation.
+
+12
+00:01:22,500 --> 00:01:30,000
+The patient owns the story. The professional owns clinical judgment. Capability can be automated. Accountability cannot.

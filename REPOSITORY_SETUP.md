@@ -1,65 +1,39 @@
-# GitHub Repository Setup
+# Public Repository Setup
 
 ## Repository name
 
-`from-signal-to-safeguard`
+`PHIL`
+
+## Description
+
+Patient-controlled health-context prototype that turns fragmented information into a source-aware visit brief while keeping clinical judgment human-owned.
+
+## Website
+
+<https://phil-health-map.imani-kirika116.chatgpt.site>
+
+## Suggested topics
+
+- health-tech
+- human-centered-design
+- patient-experience
+- responsible-ai
+- clinical-workflow
+- healthcare
+- typescript
+- react
+- portfolio-project
 
 ## Visibility
 
 Public
 
-## Description
+## Profile connection
 
-Public AI-cyber governance prototype translating risk evidence into human-owned escalation paths, safeguards, and auditable decision records.
+Pin this repository beside [AbundanceApp](https://github.com/Iamlegend-Imani/AbundanceApp). The two projects show a shared systems-building thread, while PHIL provides the clearest health technology case.
 
-## Website
+## Public evidence statement
 
-https://from-signal-to-safeguard.imani-kirika116.chatgpt.site/
+Use this when sharing the repository:
 
-## Suggested topics
-
-`ai-governance` `ai-safety` `cybersecurity` `risk-management` `decision-support` `responsible-ai` `public-interest-tech` `human-in-the-loop`
-
-## How the two repositories are linked
-
-Repository links are ordinary Markdown links in each README.
-
-In this repository, the Related Work section links to:
-
-```md
-[AbundanceApp](https://github.com/Iamlegend-Imani/AbundanceApp)
-```
-
-In the AbundanceApp README, add:
-
-```md
-## Related Work: From Signal to Safeguard
-
-AbundanceApp and From Signal to Safeguard address different problems but share a common systems-building approach.
-
-AbundanceApp explores how legitimate opportunities can be discovered, verified, matched, and maintained using source provenance, eligibility criteria, verification dates, expiration logic, and human review.
-
-[From Signal to Safeguard](https://github.com/Iamlegend-Imani/from-signal-to-safeguard) applies that evidence-centered discipline to AI-cyber governance. The project makes uncertainty visible, routes decisions to named human owners, suggests safeguards, and preserves auditable decision records using fictional scenarios only.
-
-[Launch the live prototype](https://from-signal-to-safeguard.imani-kirika116.chatgpt.site/)
-```
-
-This creates a two-way connection without combining unrelated codebases.
-
-## Pinning both repositories
-
-1. Open your GitHub profile.
-2. Find the Pinned or Popular repositories section.
-3. Select **Customize your pins**.
-4. Select both `AbundanceApp` and `from-signal-to-safeguard`.
-5. Save the pins and place `from-signal-to-safeguard` first for this application cycle.
-
-## Upload sequence
-
-1. Create a new empty public repository named `from-signal-to-safeguard`.
-2. Do not initialize it with another README, license, or `.gitignore`; this package already contains them.
-3. Upload or push every file in this package.
-4. Add the description, website, and topics above in the repository About section.
-5. Add the reciprocal Related Work section to the AbundanceApp README.
-6. Pin both repositories to your profile.
-
+> PHIL is a functional concept prototype exploring how fragmented health information and lived context could become a clearer, patient-controlled visit brief. It uses fictional data, makes source and uncertainty visible, and keeps diagnosis, treatment, and clinical judgment outside the system.

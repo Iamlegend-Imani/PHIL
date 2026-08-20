@@ -1,129 +1,92 @@
-# From Signal to Safeguard
+# PHIL
 
-**A public AI-cyber governance prototype for translating risk evidence into accountable human decisions.**
+### Personal Health Intelligence Layer
 
-[Launch the live prototype](https://from-signal-to-safeguard.imani-kirika116.chatgpt.site/) | [Read the project brief](docs/PROJECT_BRIEF.md) | [Review the methodology](docs/METHODOLOGY.md) | [See the roadmap](ROADMAP.md)
+> Your health is not fragmented. Your health data is.
 
-![From Signal to Safeguard prototype](docs/images/prototype-hero.jpg)
+[Explore the live prototype](https://phil-health-map.imani-kirika116.chatgpt.site) · [Watch the 90-second walkthrough](public/demo/PHIL_90_Second_Walkthrough.mp4) · [Download the one-page brief](public/PHIL_Project_Brief.pdf)
 
-## Overview
+![PHIL prototype overview](docs/assets/prototype-hero.jpg)
 
-From Signal to Safeguard is a public, testable decision-operations prototype for frontier-AI cyber-risk governance. It explores how evaluation evidence can be translated into:
+PHIL is a patient-controlled context layer that turns scattered health information and lived experience into a clear, source-aware brief for a better clinical conversation.
 
-- explicit evidence-quality and uncertainty assessments;
-- transparent escalation thresholds;
-- named human decision owners;
-- safeguards, restrictions, and review conditions;
-- recorded dissent and unresolved uncertainty;
-- auditable Markdown decision records.
+It is a functional concept prototype, not a clinical product. It does not diagnose, prescribe, recommend supplements, interpret lab results, or replace professional judgment.
 
-The prototype uses fictional, non-operational scenarios. It does not authorize deployments, assess live systems, provide exploit instructions, or replace expert judgment.
+## The problem I am exploring
 
-## The problem
+Health information is often stored by source rather than understood around the person. Symptoms live in memory. Medications live in a list. Test results live in separate portals. Work patterns, budget constraints, and previous attempts may never enter the record at all.
 
-Risk frameworks and capability evaluations can identify concerning evidence, but evidence affects outcomes only when an institution translates it into a timely, reviewable decision.
+That fragmentation creates a practical problem before a visit even begins: the patient and practitioner must reconstruct the story while the clock is already running.
 
-This project tests a narrow question:
+PHIL asks a focused design question:
 
-> How can public frontier-AI cyber-risk frameworks and evaluation evidence be translated into a practical, auditable decision workflow without concealing uncertainty or creating a false sense of safety?
+> What changes when health technology starts with the whole person, not simply the easiest data point?
 
-## What v0.1 does
+## What the prototype demonstrates
 
-The working prototype lets a user:
+The interactive prototype follows a fictional patient named Maya Carter through six connected views:
 
-1. Load one of three fictional AI-cyber tabletop scenarios.
-2. Record the observed evidence separately from its interpretation.
-3. Score source reliability, uncertainty, capability, severity, reversibility, scope, and system autonomy.
-4. Inspect a deterministic routing recommendation and the rules that produced it.
-5. Assign a human decision owner and review date.
-6. Preserve dissent, suggested safeguards, and conditions that would reopen the decision.
-7. Copy or download an auditable decision record in Markdown.
+1. **Overview** establishes the patient goal and product boundary.
+2. **Context Map** connects biology, behavior, lived context, and care while preserving source provenance.
+3. **Health Timeline** places events in sequence without turning correlation into causation.
+4. **Visit Brief** lets the patient choose priorities and questions for the visit.
+5. **Human Review** prevents the brief from being approved until every verification step is complete.
+6. **Method & Safety** makes the prototype limits visible inside the product.
 
-![Interactive evidence and routing workbench](docs/images/evidence-workbench.jpg)
+The prototype includes working navigation, patient and practitioner modes, editable visit questions, a generated visit brief, a verification gate, and an auditable decision record.
 
-## Decision routes
+## The design thesis
 
-The v0.1 engine uses visible rules rather than hidden model inference.
+Nothing exists in isolation.
 
-| Trigger | Suggested route | Minimum response |
-|---|---|---|
-| Uncertainty at 4 or 5, or reliability at 1 or 2 | Evidence hold | Independent check and no consequential expansion |
-| High capability and high severity, critical scope, or autonomous high-severity signal | Critical review | Pause, restrict, and escalate to the named owner |
-| Moderate capability and severity, external scope, or hard reversibility | Elevated review | Bounded pilot, monitoring, and rollback conditions |
-| Below the above thresholds | Monitor with trigger | Preserve the record and define reopening conditions |
+Biology, behavior, environment, access, and lived experience shape one another. The role of PHIL is to make that complexity legible without pretending to resolve it automatically.
 
-These routes are suggestions for structured review. A human remains responsible for every consequential decision.
+The system follows four principles:
 
-## Prototype scenarios
+- Start with the patient's words, priorities, and practical capacity.
+- Keep every input attached to its source and verification state.
+- Treat patterns as prompts for inquiry, not clinical conclusions.
+- Keep final judgment and sharing decisions with accountable people.
 
-- **Autonomous cyber-range jump:** A fictional evaluation shows a material increase in long-horizon task completion.
-- **Evaluation anomaly:** A fictional test produces conflicting evidence and unusually high uncertainty.
-- **Defensive access expansion:** A fictional proposal weighs defensive utility against capability-access risk.
+## What is real and what is not
 
-## Auditable output
+| Status | Evidence |
+| --- | --- |
+| Built | Interactive public prototype with six connected views |
+| Built | Patient-controlled question selection and visit brief |
+| Built | Human verification gate and decision record |
+| Built | Methodology, safety, scenario, case study, and review protocol |
+| Fictional | Maya Carter, her history, results, wearable data, and visit context |
+| Unvalidated | The unmet-need hypothesis and proposed workflow |
+| Pending | External practitioner feedback and clinical workflow testing |
 
-The export keeps the signal, owner, route, review date, dissent, safeguards, and reopening conditions together. The interface generates the record from the same visible routing rules shown to the user.
+No user outcomes, adoption numbers, clinical improvements, or practitioner endorsements are claimed.
 
-![Auditable decision record and visible routing rules](docs/images/decision-record.jpg)
+## Project evidence
 
-## Safety boundaries
+- [Project brief](PROJECT_BRIEF.md)
+- [One-page project brief PDF](public/PHIL_Project_Brief.pdf)
+- [Methodology](METHODOLOGY.md)
+- [Safety boundaries](SAFETY_BOUNDARIES.md)
+- [Fictional patient scenario](FICTIONAL_SCENARIO.md)
+- [Case study](CASE_STUDY.md)
+- [Practitioner review guide](PRACTITIONER_REVIEW_GUIDE.md)
+- [Roadmap](ROADMAP.md)
+- [Repository setup and public description](REPOSITORY_SETUP.md)
+- [90-second walkthrough script](WALKTHROUGH_SCRIPT.md)
+- [90-second walkthrough video](public/demo/PHIL_90_Second_Walkthrough.mp4)
+- [Walkthrough captions](WALKTHROUGH_CAPTIONS.srt)
 
-The prototype will not:
+### Prototype captures
 
-- develop offensive cyber capabilities or provide exploit instructions;
-- test models against live systems or handle undisclosed vulnerabilities;
-- claim to replace formal evaluation, regulatory authority, or expert judgment;
-- collect sensitive security, proprietary, or personal information;
-- promise that procedural consistency can eliminate catastrophic risk.
+| Context map | Human review |
+| --- | --- |
+| ![PHIL context map](docs/assets/evidence-workbench.jpg) | ![PHIL decision record](docs/assets/decision-record.jpg) |
 
-See [Safety Boundaries](docs/SAFETY_BOUNDARIES.md) for the full scope and limitations.
-
-## Research foundations
-
-The starting source set includes public work from:
-
-- [UK AI Security Institute](https://www.aisi.gov.uk/frontier-ai-trends-report)
-- [NIST Center for AI Standards and Innovation](https://www.nist.gov/caisi)
-- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
-- [Anthropic Responsible Scaling Policy](https://www.anthropic.com/responsible-scaling-policy)
-- [OpenAI Preparedness Framework](https://openai.com/index/updating-our-preparedness-framework/)
-
-The current interface is a research prototype, not a completed crosswalk or validated institutional standard. Primary-source mapping and practitioner review are part of the proposed pilot.
-
-## Related work: AbundanceApp
-
-[AbundanceApp](https://github.com/Iamlegend-Imani/AbundanceApp) is a separate resource-discovery project. It is not presented as AI-cyber safety work.
-
-The connection is methodological. AbundanceApp structures source provenance, verification dates, eligibility language, expiration logic, and human review around opportunity information. From Signal to Safeguard applies a similar systems-building discipline to uncertain AI-cyber risk evidence, escalation, safeguards, and human accountability.
-
-Together, the projects demonstrate a consistent practice: making evidence quality, decision criteria, ownership, exceptions, and review conditions visible.
-
-## Project status
-
-**Current release:** v0.1 working prototype, August 2026
-
-Completed:
-
-- responsive public interface;
-- three fictional tabletop presets;
-- deterministic decision-routing logic;
-- evidence, uncertainty, ownership, and dissent fields;
-- auditable Markdown record generation;
-- explicit safety boundaries and starting-source links.
-
-Planned work depends on funding, practitioner participation, and what the evidence supports. See the [roadmap](ROADMAP.md).
-
-## Run locally
-
-Prerequisites:
-
-- Node.js 22.13 or newer
-- npm
+## Run it locally
 
 ```bash
-git clone https://github.com/Iamlegend-Imani/from-signal-to-safeguard.git
-cd from-signal-to-safeguard
-npm ci
+npm install
 npm run dev
 ```
 
@@ -133,23 +96,28 @@ For a production build:
 npm run build
 ```
 
-## Repository structure
+## Technology
 
-```text
-app/                         Interactive prototype and styles
-docs/                        Brief, methodology, safety boundaries, and images
-public/                      Public assets
-scripts/                     Build and validation helpers
-worker/                      Cloudflare-compatible worker entry point
-ROADMAP.md                   Proposed research and product milestones
-CITATION.cff                 Citation metadata
-```
+- React 19
+- TypeScript
+- Next.js-compatible Vinext runtime
+- CSS-first responsive interface
+- Cloudflare-compatible production build
 
-## Author
+The prototype deliberately uses fictional local state. It does not collect, store, or transmit personal health information.
 
-**Imani-Faith Kirika**  
-Systems builder working across AI, data, operations, customer experience, and cybersecurity.
+## Related work
 
-## License
+[AbundanceApp](https://github.com/Iamlegend-Imani/AbundanceApp) is another public prototype in my broader systems-building practice. PHIL narrows that practice into a specific health technology question: how to make patient context useful without automating away agency or clinical judgment.
 
-Released under the [MIT License](LICENSE). The methodology remains experimental and should not be treated as an assurance, certification, or operational authorization standard.
+## Builder
+
+I am [Imani Kirika](https://www.linkedin.com/in/imanikir/), a systems builder working across technology, health, intelligence, and human-centered design. I build systems that make complexity legible and accountability visible.
+
+Proof over hype. No invented metrics. No hidden clinical claims.
+
+## License and responsible use
+
+The source code is available under the [MIT License](LICENSE). The PHIL name, product concept, written methodology, and visual identity remain attributable to Imani Kirika.
+
+This repository is for design exploration and portfolio demonstration. It must not be used for medical advice, diagnosis, treatment, triage, or emergencies.
