@@ -28,6 +28,10 @@ Patient-controlled health-context prototype that turns fragmented information in
 
 Public
 
+## License status
+
+Proprietary — All Rights Reserved. Public visibility is for portfolio evaluation and demonstration only; it does not grant permission to copy, use, modify, redistribute, commercialize, or create derivative works. See `LICENSE`.
+
 ## Profile connection
 
 Pin this repository beside [AbundanceApp](https://github.com/Iamlegend-Imani/AbundanceApp). The two projects show a shared systems-building thread, while PHIL provides the clearest health technology case.
