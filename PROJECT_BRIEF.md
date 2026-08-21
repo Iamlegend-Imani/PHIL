@@ -4,7 +4,7 @@
 
 **Builder:** Imani Kirika  
 **Status:** Functional concept prototype  
-**Live prototype:** <https://phil-health-map.imani-kirika116.chatgpt.site>  
+**Public site:** <https://iamlegend-imani.github.io/PHIL/>  
 **Domain:** Patient context, visit preparation, human-centered health technology
 
 ## One-line concept
@@ -38,6 +38,7 @@ This is an unvalidated hypothesis. The current prototype demonstrates a proposed
 - A visible human decision record
 - A Method & Safety section embedded in the interface
 - A fictional scenario, methodology, safety protocol, case study, roadmap, and practitioner review guide
+- A static GitHub Pages thesis and evidence site for public review
 
 ## Design principles
 
