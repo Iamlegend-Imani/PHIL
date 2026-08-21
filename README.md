@@ -1,15 +1,13 @@
 # PHIL
 
 > [!IMPORTANT]
-> **Proprietary source — public for portfolio review only.** Copying, reuse, modification, redistribution, commercialization, and derivative works are prohibited without prior written permission. See [LICENSE](LICENSE).
+> **Proprietary source, public for portfolio review only.** Copying, reuse, modification, redistribution, commercialization, and derivative works are prohibited without prior written permission. See [LICENSE](LICENSE).
 
 ### Personal Health Intelligence Layer
 
 > Your health is not fragmented. Your health data is.
 
-[Explore the PHIL site](https://iamlegend-imani.github.io/PHIL/) · [Watch the 90-second walkthrough](public/PHIL_90_Second_Walkthrough.mp4) · [Download the one-page brief](public/PHIL_Project_Brief.pdf)
-
-![PHIL prototype overview](docs/images/prototype-hero.jpg)
+[Explore the PHIL site](https://iamlegend-imani.github.io/PHIL/) · [View the prototype experience](https://iamlegend-imani.github.io/PHIL/prototype.html) · [Watch the 90-second walkthrough](public/PHIL_90_Second_Walkthrough.mp4) · [Download the one-page brief](public/PHIL_Project_Brief.pdf)
 
 PHIL is a patient-controlled context layer that turns scattered health information and lived experience into a clear, source-aware brief for a better clinical conversation.
 
@@ -80,12 +78,6 @@ No user outcomes, adoption numbers, clinical improvements, or practitioner endor
 - [90-second walkthrough video](public/PHIL_90_Second_Walkthrough.mp4)
 - [Walkthrough captions](WALKTHROUGH_CAPTIONS.srt)
 
-### Prototype captures
-
-| Context map | Human review |
-| --- | --- |
-| ![PHIL context map](docs/images/evidence-workbench.jpg) | ![PHIL decision record](docs/images/decision-record.jpg) |
-
 ## Access and permitted use
 
 The public site and repository materials may be viewed for portfolio evaluation, research review, and demonstration. The source is not open source. Copying, cloning, reuse, modification, redistribution, commercial use, and creation of derivative works require prior written permission. See the [proprietary notice](LICENSE).
@@ -107,12 +99,14 @@ The prototype deliberately uses fictional local state. It does not collect, stor
 
 ## Builder
 
-I am [Imani Kirika](https://www.linkedin.com/in/imanikir/), a systems builder working across technology, health, intelligence, and human-centered design. I build systems that make complexity legible and accountability visible.
+Built by [Imani](https://www.linkedin.com/in/imanikir/), a systems builder working across technology, health, intelligence, and human-centered design.
+
+I build systems that make complexity legible and accountability visible.
 
 Proof over hype. No invented metrics. No hidden clinical claims.
 
 ## License and responsible use
 
-**Proprietary — all rights reserved.** This repository is public for portfolio review and demonstration only. No permission is granted to copy, use, modify, redistribute, commercialize, or create derivative works from the source or accompanying materials, except for the limited rights required by GitHub's Terms of Service. See the [proprietary notice](LICENSE).
+**Proprietary, all rights reserved.** This repository is public for portfolio review and demonstration only. No permission is granted to copy, use, modify, redistribute, commercialize, or create derivative works from the source or accompanying materials, except for the limited rights required by GitHub's Terms of Service. See the [proprietary notice](LICENSE).
 
 This repository is for design exploration and portfolio demonstration. It must not be used for medical advice, diagnosis, treatment, triage, or emergencies.
