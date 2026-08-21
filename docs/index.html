@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PHIL, the Personal Health Intelligence Layer, is a patient-controlled context concept for making fragmented health information legible while keeping clinical judgment human-owned." />
+  <meta name="theme-color" content="#08120f" />
+  <title>PHIL | Personal Health Intelligence Layer</title>
+  <style>
+    :root {
+      --ink: #0a1713;
+      --deep: #08120f;
+      --forest: #16382d;
+      --moss: #315f4d;
+      --sage: #8fae9f;
+      --mist: #dfe9e3;
+      --paper: #f5f4ef;
+      --warm: #e8ddcd;
+      --line: rgba(15, 40, 31, 0.16);
+      --white: #fffef9;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .shell { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      background: rgba(8,18,15,.9);
+      backdrop-filter: blur(16px);
+      color: var(--white);
+    }
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+    .mark {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+    }
+    .nav-links { display: flex; gap: 26px; align-items: center; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 14px;
+      color: rgba(255,255,255,.78);
+    }
+    .nav-links a:hover { color: #fff; }
+
+    .hero {
+      color: var(--white);
+      background:
+        radial-gradient(circle at 78% 24%, rgba(104,151,129,.28), transparent 30%),
+        radial-gradient(circle at 18% 82%, rgba(226,207,178,.08), transparent 28%),
+        var(--deep);
+      min-height: 86vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 72px;
+      align-items: center;
+      padding: 96px 0 88px;
+    }
+    .eyebrow {
+      margin: 0 0 20px;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 12px;
+      font-weight: 700;
+      color: #afcabb;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(58px, 9vw, 118px);
+      line-height: .86;
+      letter-spacing: -.055em;
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+    .hero-subtitle {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(24px, 3.2vw, 42px);
+      line-height: 1.08;
+      max-width: 760px;
+      margin-bottom: 30px;
+      color: #f1eee7;
+    }
+    .hero-copy {
+      max-width: 680px;
+      color: rgba(255,255,255,.72);
+      font-size: 18px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid transparent;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--warm); color: var(--ink); }
+    .button-secondary { border-color: rgba(255,255,255,.3); color: #fff; }
+
+    .orbit {
+      position: relative;
+      aspect-ratio: 1;
+      max-width: 480px;
+      margin: 0 auto;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 50%;
+    }
+    .orbit::before, .orbit::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      inset: 14%;
+    }
+    .orbit::after { inset: 29%; }
+    .orbit-core {
+      position: absolute;
+      inset: 36%;
+      border-radius: 50%;
+      background: var(--warm);
+      color: var(--ink);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: .08em;
+      z-index: 2;
+    }
+    .node {
+      position: absolute;
+      z-index: 3;
+      width: 112px;
+      min-height: 44px;
+      padding: 11px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(10px);
+      font-size: 12px;
+      text-align: center;
+      color: rgba(255,255,255,.85);
+    }
+    .n1 { top: 4%; left: 36%; }
+    .n2 { top: 25%; right: -2%; }
+    .n3 { bottom: 18%; right: 4%; }
+    .n4 { bottom: 3%; left: 34%; }
+    .n5 { bottom: 20%; left: 1%; }
+    .n6 { top: 24%; left: -3%; }
+
+    section { padding: 100px 0; }
+    .section-head { max-width: 760px; margin-bottom: 56px; }
+    .section-head h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 5vw, 66px);
+      line-height: 1.02;
+      letter-spacing: -.035em;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+    .section-head p { font-size: 18px; color: #46544d; }
+
+    .thesis {
+      background: var(--warm);
+      border-top: 1px solid rgba(0,0,0,.05);
+      border-bottom: 1px solid rgba(0,0,0,.05);
+    }
+    .thesis-quote {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(40px, 6.5vw, 84px);
+      line-height: .98;
+      letter-spacing: -.045em;
+      max-width: 1020px;
+      margin: 0;
+    }
+    .thesis-note {
+      margin-top: 30px;
+      max-width: 720px;
+      font-size: 18px;
+      color: #39453f;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .principle {
+      background: var(--paper);
+      padding: 42px;
+      min-height: 250px;
+    }
+    .number {
+      display: inline-block;
+      font-family: Georgia, serif;
+      font-size: 14px;
+      margin-bottom: 38px;
+      color: var(--moss);
+    }
+    .principle h3 {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      line-height: 1.08;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+    .principle p { color: #52605a; margin-bottom: 0; }
+
+    .system { background: #edf0eb; }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(7, auto);
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 44px;
+    }
+    .flow-card {
+      width: 140px;
+      min-height: 130px;
+      padding: 18px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .flow-card strong { font-family: Georgia, serif; font-size: 20px; line-height: 1.1; font-weight: 500; }
+    .flow-card small { color: #68736d; }
+    .arrow { color: #718078; font-size: 22px; }
+    .flow-card.accent { background: var(--forest); color: #fff; border-color: var(--forest); }
+    .flow-card.accent small { color: rgba(255,255,255,.7); }
+
+    .prototype-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 42px;
+      align-items: start;
+    }
+    .prototype-image {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(31,49,41,.13);
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .prototype-side { display: grid; gap: 14px; }
+    .mini-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fffdf8;
+    }
+    .mini-card h3 { font-family: Georgia, serif; font-size: 24px; font-weight: 500; margin-bottom: 8px; }
+    .mini-card p { color: #56625c; margin-bottom: 0; }
+
+    .boundary {
+      background: var(--deep);
+      color: var(--white);
+    }
+    .boundary .section-head p { color: rgba(255,255,255,.68); }
+    .boundary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+    }
+    .boundary-card {
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 20px;
+      padding: 34px;
+      background: rgba(255,255,255,.035);
+    }
+    .boundary-card h3 { font-family: Georgia, serif; font-size: 28px; font-weight: 500; }
+    .boundary-card ul { padding-left: 18px; margin-bottom: 0; color: rgba(255,255,255,.72); }
+    .boundary-card li + li { margin-top: 8px; }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+    }
+    .evidence-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      background: #fff;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+    }
+    .evidence-card .tag {
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--moss);
+      margin-bottom: 38px;
+    }
+    .evidence-card h3 { font-family: Georgia, serif; font-size: 26px; font-weight: 500; line-height: 1.1; }
+    .evidence-card p { color: #58645e; flex: 1; }
+    .evidence-card a { text-decoration-thickness: 1px; text-underline-offset: 4px; font-weight: 700; font-size: 14px; }
+
+    .status {
+      padding-top: 0;
+    }
+    .status-row {
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      padding: 22px 0;
+      gap: 30px;
+    }
+    .status-row:last-child { border-bottom: 1px solid var(--line); }
+    .status-row strong { font-size: 13px; text-transform: uppercase; letter-spacing: .12em; color: var(--moss); }
+    .status-row p { margin: 0; }
+
+    .builder {
+      background: var(--forest);
+      color: #fff;
+    }
+    .builder-grid {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 70px;
+      align-items: start;
+    }
+    .builder h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(44px, 5vw, 70px);
+      line-height: 1;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+    .builder-copy p { font-size: 20px; color: rgba(255,255,255,.78); }
+    .builder-copy .button { margin-top: 10px; }
+
+    footer {
+      background: #050c09;
+      color: rgba(255,255,255,.62);
+      padding: 36px 0;
+      font-size: 13px;
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .prototype-grid, .builder-grid { grid-template-columns: 1fr; }
+      .orbit { width: min(88vw, 460px); }
+      .flow { grid-template-columns: 1fr; }
+      .arrow { transform: rotate(90deg); text-align: center; }
+      .flow-card { width: 100%; min-height: 100px; }
+      .evidence-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .shell { width: min(calc(100% - 28px), var(--max)); }
+      .nav-links a:not(.keep) { display: none; }
+      .hero-grid { padding: 70px 0 64px; gap: 52px; }
+      section { padding: 76px 0; }
+      .principles-grid, .boundary-grid, .evidence-grid { grid-template-columns: 1fr; }
+      .principle { min-height: auto; padding: 30px; }
+      .status-row { grid-template-columns: 1fr; gap: 8px; }
+      .node { width: 96px; font-size: 11px; padding: 8px 10px; }
+      .orbit-core { inset: 34%; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Primary">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top" aria-label="PHIL home">
+        <span class="mark">P</span>
+        <span>PHIL</span>
+      </a>
+      <div class="nav-links">
+        <a href="#thesis">Thesis</a>
+        <a href="#principles">Principles</a>
+        <a href="#prototype">Prototype</a>
+        <a href="#evidence">Evidence</a>
+        <a class="keep" href="https://github.com/Iamlegend-Imani/PHIL" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">Personal Health Intelligence Layer</p>
+          <h1>PHIL</h1>
+          <p class="hero-subtitle">Your health is not fragmented. Your health data is.</p>
+          <p class="hero-copy">PHIL is a patient-controlled context concept for turning scattered health information and lived experience into a clear, source-aware brief for a better clinical conversation, while keeping final judgment human-owned.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#thesis">Explore the idea</a>
+            <a class="button button-secondary" href="https://raw.githubusercontent.com/Iamlegend-Imani/PHIL/main/public/PHIL_Project_Brief.pdf" target="_blank" rel="noreferrer">Read project brief</a>
+          </div>
+        </div>
+
+        <div class="orbit" aria-label="Whole-person context model">
+          <div class="orbit-core">WHOLE<br>PERSON</div>
+          <div class="node n1">Biology</div>
+          <div class="node n2">Behavior</div>
+          <div class="node n3">Environment</div>
+          <div class="node n4">Care</div>
+          <div class="node n5">Access</div>
+          <div class="node n6">Lived context</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="thesis" id="thesis">
+      <div class="shell">
+        <p class="eyebrow">The thesis</p>
+        <p class="thesis-quote">Nothing exists in isolation.</p>
+        <p class="thesis-note">Biology, behavior, environment, access, lived experience, and care shape one another. PHIL asks what changes when health technology starts with the whole person instead of the easiest available data point.</p>
+      </div>
+    </section>
+
+    <section id="principles">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">The ideology</p>
+          <h2>Context before conclusion.</h2>
+          <p>PHIL is built around a simple position: better health technology should make complexity legible without pretending that complexity has been automatically resolved.</p>
+        </div>
+
+        <div class="principles-grid">
+          <article class="principle">
+            <span class="number">01</span>
+            <h3>The patient is not a data container.</h3>
+            <p>Their words, goals, affordability, capacity, preferences, and practical reality belong in the context, not outside it.</p>
+          </article>
+          <article class="principle">
+            <span class="number">02</span>
+            <h3>Source matters.</h3>
+            <p>Every meaningful detail should retain its origin, date, and verification state so people can tell what is known, reported, inferred, or still uncertain.</p>
+          </article>
+          <article class="principle">
+            <span class="number">03</span>
+            <h3>A pattern is not a conclusion.</h3>
+            <p>Timing, variation, and relationships can create better questions. They do not establish diagnosis, causation, or treatment direction by themselves.</p>
+          </article>
+          <article class="principle">
+            <span class="number">04</span>
+            <h3>Capability can be automated. Accountability cannot.</h3>
+            <p>Technology can organize, summarize, and surface context. Final interpretation, sharing, and clinical decisions remain with accountable people.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="system" id="system">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">The proposed layer</p>
+          <h2>Not another record. A connective layer.</h2>
+          <p>PHIL explores a workflow where fragmented sources are brought into context, converted into a patient-controlled preparation brief, and verified before they enter a clinical conversation.</p>
+        </div>
+
+        <div class="flow" aria-label="PHIL conceptual workflow">
+          <div class="flow-card"><strong>Health fragments</strong><small>records, memory, medications, wearables</small></div>
+          <div class="arrow">→</div>
+          <div class="flow-card"><strong>Lived context</strong><small>goals, capacity, access, constraints</small></div>
+          <div class="arrow">→</div>
+          <div class="flow-card accent"><strong>PHIL</strong><small>context, provenance, uncertainty</small></div>
+          <div class="arrow">→</div>
+          <div class="flow-card"><strong>Human review</strong><small>verify, correct, approve</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="prototype">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Functional concept prototype</p>
+          <h2>The idea is inspectable.</h2>
+          <p>The current prototype uses a fictional patient scenario to make the concept tangible. It demonstrates the workflow, the interface boundaries, and the questions that still need validation.</p>
+        </div>
+
+        <div class="prototype-grid">
+          <figure class="prototype-image">
+            <img src="images/prototype-hero.jpg" alt="PHIL prototype overview" />
+          </figure>
+          <div class="prototype-side">
+            <div class="mini-card"><h3>Context Map</h3><p>Connects biology, behavior, lived context, and care while preserving source provenance.</p></div>
+            <div class="mini-card"><h3>Health Timeline</h3><p>Places events in sequence while keeping correlation separate from causation.</p></div>
+            <div class="mini-card"><h3>Visit Brief</h3><p>Lets the patient choose priorities and questions for the clinical conversation.</p></div>
+            <div class="mini-card"><h3>Human Review</h3><p>Requires verification before a brief is approved for sharing.</p></div>
+            <a class="button" style="background:var(--ink);color:#fff;justify-self:start" href="https://raw.githubusercontent.com/Iamlegend-Imani/PHIL/main/public/PHIL_90_Second_Walkthrough.mp4" target="_blank" rel="noreferrer">Watch 90-second walkthrough</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="boundary" id="boundary">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Safety is part of the architecture</p>
+          <h2>PHIL is intentionally limited.</h2>
+          <p>The prototype is not a clinical product. Its boundaries are visible because responsible systems should state what they do not do as clearly as what they can do.</p>
+        </div>
+
+        <div class="boundary-grid">
+          <article class="boundary-card">
+            <h3>PHIL may help organize</h3>
+            <ul>
+              <li>patient-reported context</li>
+              <li>source-aware information</li>
+              <li>visit priorities and questions</li>
+              <li>verification and decision records</li>
+            </ul>
+          </article>
+          <article class="boundary-card">
+            <h3>PHIL does not claim to</h3>
+            <ul>
+              <li>diagnose or predict disease</li>
+              <li>prescribe medication or supplements</li>
+              <li>interpret lab results</li>
+              <li>triage emergencies or replace professional judgment</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Evidence over hype</p>
+          <h2>Built, documented, and honest about what remains unproven.</h2>
+          <p>The repository separates what exists from what is still a hypothesis. No clinical outcomes, adoption metrics, or practitioner endorsements are claimed.</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="evidence-card">
+            <span class="tag">Documentation</span>
+            <h3>Project brief</h3>
+            <p>The concept, opportunity, workflow, boundaries, and validation questions.</p>
+            <a href="https://github.com/Iamlegend-Imani/PHIL/blob/main/PROJECT_BRIEF.md" target="_blank" rel="noreferrer">Read brief ↗</a>
+          </article>
+          <article class="evidence-card">
+            <span class="tag">Method</span>
+            <h3>Methodology</h3>
+            <p>How the prototype handles context, provenance, uncertainty, and human verification.</p>
+            <a href="https://github.com/Iamlegend-Imani/PHIL/blob/main/METHODOLOGY.md" target="_blank" rel="noreferrer">Read methodology ↗</a>
+          </article>
+          <article class="evidence-card">
+            <span class="tag">Safety</span>
+            <h3>Safety boundaries</h3>
+            <p>The intended use, exclusions, guardrails, and explicit non-clinical boundary.</p>
+            <a href="https://github.com/Iamlegend-Imani/PHIL/blob/main/SAFETY_BOUNDARIES.md" target="_blank" rel="noreferrer">Read safety notes ↗</a>
+          </article>
+          <article class="evidence-card">
+            <span class="tag">Scenario</span>
+            <h3>Fictional patient</h3>
+            <p>The fictional scenario used to demonstrate the product without using real health information.</p>
+            <a href="https://github.com/Iamlegend-Imani/PHIL/blob/main/FICTIONAL_SCENARIO.md" target="_blank" rel="noreferrer">View scenario ↗</a>
+          </article>
+          <article class="evidence-card">
+            <span class="tag">Evaluation</span>
+            <h3>Practitioner review</h3>
+            <p>A structured guide for seeking external feedback without overstating validation.</p>
+            <a href="https://github.com/Iamlegend-Imani/PHIL/blob/main/PRACTITIONER_REVIEW_GUIDE.md" target="_blank" rel="noreferrer">View review guide ↗</a>
+          </article>
+          <article class="evidence-card">
+            <span class="tag">Next</span>
+            <h3>Roadmap</h3>
+            <p>The path from concept prototype toward responsible workflow and usability testing.</p>
+            <a href="https://github.com/Iamlegend-Imani/PHIL/blob/main/ROADMAP.md" target="_blank" rel="noreferrer">View roadmap ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="status">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Current evidence status</p>
+          <h2>What is real. What is not yet earned.</h2>
+        </div>
+        <div class="status-row"><strong>Built</strong><p>Interactive concept prototype, patient-controlled visit preparation flow, verification gate, decision record, and supporting documentation.</p></div>
+        <div class="status-row"><strong>Fictional</strong><p>The demonstration patient, history, results, wearable data, and visit context.</p></div>
+        <div class="status-row"><strong>Unvalidated</strong><p>The unmet-need hypothesis, workflow fit, usability, practitioner value, and safety performance.</p></div>
+        <div class="status-row"><strong>Pending</strong><p>External practitioner feedback and real-world workflow testing.</p></div>
+      </div>
+    </section>
+
+    <section class="builder" id="builder">
+      <div class="shell builder-grid">
+        <div>
+          <p class="eyebrow">Builder</p>
+          <h2>Imani Kirika</h2>
+        </div>
+        <div class="builder-copy">
+          <p>I build systems that make complexity legible and accountability visible. PHIL brings together human-centered technology, health, systems thinking, responsible AI boundaries, and a commitment to separating compelling ideas from evidence not yet earned.</p>
+          <p>PHIL is not presented as a finished answer. It is evidence of how a difficult system can be observed, framed, made tangible, and bounded responsibly from the beginning.</p>
+          <a class="button button-primary" href="https://github.com/Iamlegend-Imani/PHIL" target="_blank" rel="noreferrer">Explore the repository</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span>PHIL | Personal Health Intelligence Layer</span>
+      <span>Concept prototype for portfolio and research review. Not medical advice.</span>
+    </div>
+  </footer>
+</body>
+</html>
