@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PHIL functional concept prototype preview." />
+  <meta name="theme-color" content="#0b100f" />
+  <title>PHIL Prototype | Personal Health Intelligence Layer</title>
+  <style>
+    :root {
+      --bg:#0b100f; --bg-soft:#101715; --panel:#151d1a; --panel-2:#1a2421;
+      --text:#f4f0e7; --soft:#bcb9af; --muted:#8e958e; --line:rgba(217,230,222,.12);
+      --teal:#58b4a7; --teal-wash:rgba(88,180,167,.11); --gold:#d2b86c; --gold-wash:rgba(210,184,108,.11);
+      --max:1180px; --shadow:rgba(0,0,0,.3);
+    }
+    html[data-theme="light"] {
+      --bg:#f4f0e7; --bg-soft:#ebe5d9; --panel:#fffdf8; --panel-2:#f1ece2;
+      --text:#0b100f; --soft:#46504c; --muted:#69736e; --line:rgba(11,16,15,.13);
+      --teal:#246b65; --teal-wash:rgba(36,107,101,.08); --gold:#9d7f2f; --gold-wash:rgba(157,127,47,.09);
+      --shadow:rgba(42,49,45,.12);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 76% -8%,var(--teal-wash),transparent 30rem),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6} a{color:inherit}.shell{width:min(calc(100% - 40px),var(--max));margin:0 auto}
+    .nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 90%,transparent);border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
+    .nav-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.left{display:flex;align-items:center;gap:18px}.back{text-decoration:none;color:var(--soft);font-size:13px}.back:hover{color:var(--text)}
+    .brand{display:flex;align-items:center;gap:11px}.mark{position:relative;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,var(--panel-2),var(--bg-soft));border:1px solid color-mix(in srgb,var(--teal) 48%,transparent);font-family:Georgia,serif}.mark:before,.mark:after{content:"";position:absolute;inset:6px;border-radius:50%;border:1px solid color-mix(in srgb,var(--gold) 55%,transparent)}.mark:after{inset:3px;border-color:transparent var(--teal) transparent var(--teal);transform:rotate(35deg)}.brand strong{font-family:Georgia,serif;font-size:19px;font-weight:500;letter-spacing:.12em}
+    .theme{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;min-height:40px;padding:0 14px;cursor:pointer;font-size:12px;font-weight:700}.theme span{display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px var(--gold-wash)}
+    header{padding:88px 0 58px}.eyebrow{margin:0 0 18px;color:var(--gold);text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:800}h1,h2,h3,p{margin-top:0}h1{margin-bottom:22px;font-family:Georgia,serif;font-size:clamp(50px,7vw,88px);line-height:.94;font-weight:500;letter-spacing:-.045em}.lede{max-width:760px;color:var(--soft);font-size:18px}.notice{display:inline-flex;gap:9px;align-items:center;margin-top:18px;padding:9px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:11px}.notice i{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px var(--teal-wash)}
+    .video-frame{border:1px solid var(--line);border-radius:26px;overflow:hidden;background:#050807;box-shadow:0 30px 80px var(--shadow)}video{display:block;width:100%;aspect-ratio:16/9;background:#050807}.video-meta{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:15px 18px;background:var(--panel);border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+    section{padding:88px 0;border-bottom:1px solid var(--line)}.section-head{max-width:760px;margin-bottom:40px}.section-head h2{margin-bottom:14px;font-family:Georgia,serif;font-size:clamp(38px,5vw,62px);font-weight:500;line-height:1}.section-head p:last-child{color:var(--soft)}
+    .app-frame{display:grid;grid-template-columns:250px 1fr;min-height:650px;border:1px solid var(--line);border-radius:26px;overflow:hidden;background:var(--bg);box-shadow:0 26px 70px var(--shadow)}
+    .sidebar{padding:25px 18px;background:color-mix(in srgb,var(--bg-soft) 94%,transparent);border-right:1px solid var(--line)}.side-brand{display:flex;align-items:center;gap:12px;margin-bottom:20px}.side-brand .mark{width:42px;height:42px}.side-brand div:last-child{display:flex;flex-direction:column}.side-brand strong{font-family:Georgia,serif;font-size:20px;font-weight:500;letter-spacing:.1em}.side-brand small{color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.08em}.demo{padding:15px 2px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--muted);font-size:9px;letter-spacing:.13em;text-transform:uppercase}.demo i{display:inline-block;width:6px;height:6px;margin-right:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px var(--teal-wash)}
+    .side-nav{display:grid;gap:5px;margin-top:18px}.side-item{padding:11px;border:1px solid transparent;border-radius:12px;display:grid;grid-template-columns:26px 1fr;gap:8px;color:var(--soft)}.side-item.active{background:var(--teal-wash);border-color:color-mix(in srgb,var(--teal) 22%,transparent);color:var(--text)}.side-item b{font-size:11px;color:var(--muted)}.side-item strong{display:block;font-size:13px}.side-item small{display:block;color:var(--muted);font-size:9px;margin-top:2px}
+    .workspace{padding:30px}.topbar{display:flex;justify-content:space-between;gap:20px;align-items:center;padding-bottom:20px;border-bottom:1px solid var(--line);color:var(--muted);font-size:12px}.mode{display:inline-flex;padding:3px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}.mode span{padding:6px 10px;border-radius:999px}.mode .active{background:var(--teal-wash);color:var(--teal)}
+    .workspace-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:26px}.hero-card,.card{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:24px}.hero-card{grid-column:1/-1;background:linear-gradient(145deg,var(--teal-wash),transparent 55%),var(--panel)}.hero-card h2{font-family:Georgia,serif;font-size:33px;font-weight:500;margin-bottom:8px}.hero-card p,.card p{color:var(--soft);margin-bottom:0}.kicker{color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.card h3{font-family:Georgia,serif;font-size:23px;font-weight:500;margin-bottom:10px}.pill{display:inline-flex;padding:6px 9px;margin:5px 4px 0 0;border-radius:999px;border:1px solid var(--line);font-size:10px;color:var(--muted)}.pill.teal{border-color:color-mix(in srgb,var(--teal) 30%,transparent);background:var(--teal-wash);color:var(--teal)}
+    .views{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.view{padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.view span{color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.12em}.view h3{font-family:Georgia,serif;font-size:24px;font-weight:500;margin:20px 0 8px}.view p{color:var(--soft);font-size:14px;margin:0}
+    footer{padding:32px 0;color:var(--muted);font-size:12px}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.foot a{color:var(--soft);text-underline-offset:3px}
+    @media(max-width:900px){.app-frame{grid-template-columns:1fr}.sidebar{display:none}.workspace-grid{grid-template-columns:1fr}.views{grid-template-columns:1fr 1fr}}
+    @media(max-width:650px){.shell{width:min(calc(100% - 28px),var(--max))}.back{display:none}.views{grid-template-columns:1fr}.workspace{padding:18px}.app-frame{min-height:auto}}
+  </style>
+</head>
+<body>
+  <nav class="nav"><div class="shell nav-inner"><div class="left"><a class="back" href="index.html">← PHIL home</a><div class="brand"><span class="mark">P</span><strong>PHIL</strong></div></div><button class="theme" id="themeToggle" type="button"><span></span><b id="themeLabel">Light mode</b></button></div></nav>
+
+  <header><div class="shell"><p class="eyebrow">Functional concept prototype</p><h1>The product experience behind the idea.</h1><p class="lede">The PHIL public site explains the thesis. This page shows how that thesis becomes a patient-controlled workflow: connect the fragments, preserve provenance, prepare the conversation, and keep judgment human.</p><div class="notice"><i></i>Fictional patient data · Concept prototype · Not medical advice</div></div></header>
+
+  <section style="padding-top:10px"><div class="shell"><div class="video-frame"><video controls playsinline preload="metadata"><source src="https://raw.githubusercontent.com/Iamlegend-Imani/PHIL/main/public/PHIL_90_Second_Walkthrough.mp4" type="video/mp4" />Your browser does not support embedded video.</video><div class="video-meta"><span>90-second walkthrough</span><span>Overview → Context Map → Timeline → Visit Brief → Human Review → Method & Safety</span></div></div></div></section>
+
+  <section><div class="shell"><div class="section-head"><p class="eyebrow">Interface language</p><h2>A separate web app experience.</h2><p>The prototype uses the original PHIL visual system: deep ink, ivory, teal, and gold, with a persistent patient context workspace and visible safety boundaries.</p></div>
+    <div class="app-frame" aria-label="Static preview of PHIL web app">
+      <aside class="sidebar">
+        <div class="side-brand"><span class="mark">P</span><div><strong>PHIL</strong><small>Personal Health Intelligence Layer</small></div></div>
+        <div class="demo"><i></i>Interactive concept</div>
+        <div class="side-nav">
+          <div class="side-item active"><b>01</b><div><strong>Overview</strong><small>Start here</small></div></div>
+          <div class="side-item"><b>02</b><div><strong>Context Map</strong><small>Connect the fragments</small></div></div>
+          <div class="side-item"><b>03</b><div><strong>Health Timeline</strong><small>See change over time</small></div></div>
+          <div class="side-item"><b>04</b><div><strong>Visit Brief</strong><small>Prepare the conversation</small></div></div>
+          <div class="side-item"><b>05</b><div><strong>Human Review</strong><small>Keep judgment human</small></div></div>
+          <div class="side-item"><b>06</b><div><strong>Method & Safety</strong><small>Know the boundaries</small></div></div>
+        </div>
+      </aside>
+      <div class="workspace">
+        <div class="topbar"><span>Maya Carter / Overview</span><div class="mode"><span class="active">Patient</span><span>Practitioner</span></div></div>
+        <div class="workspace-grid">
+          <article class="hero-card"><span class="kicker">Patient goal</span><h2>Make the whole story easier to see before the visit starts.</h2><p>PHIL organizes a fictional patient's story, sources, priorities, and uncertainty without turning those inputs into a diagnosis.</p></article>
+          <article class="card"><span class="kicker">Context</span><h3>What surrounds the data?</h3><p>Work patterns, sleep, access, affordability, previous attempts, preferences, and care history stay connected to the health story.</p><span class="pill teal">patient entered</span><span class="pill">needs verification</span></article>
+          <article class="card"><span class="kicker">Boundary</span><h3>What stays human?</h3><p>Verification, interpretation, sharing decisions, and clinical judgment remain accountable to people.</p><span class="pill teal">human review required</span></article>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <section><div class="shell"><div class="section-head"><p class="eyebrow">Six connected views</p><h2>The app follows the conversation, not the database.</h2></div><div class="views">
+    <article class="view"><span>01 / OVERVIEW</span><h3>Start with the person.</h3><p>Establish the patient's goal and the product boundary before anything is summarized.</p></article>
+    <article class="view"><span>02 / CONTEXT MAP</span><h3>Connect the fragments.</h3><p>Biology, behavior, lived context, care, and source provenance remain visible together.</p></article>
+    <article class="view"><span>03 / HEALTH TIMELINE</span><h3>Sequence is not causation.</h3><p>Events are placed in time to support inquiry without manufacturing a clinical conclusion.</p></article>
+    <article class="view"><span>04 / VISIT BRIEF</span><h3>The patient chooses.</h3><p>Priorities and questions are selected for the conversation instead of generated as treatment direction.</p></article>
+    <article class="view"><span>05 / HUMAN REVIEW</span><h3>Accountability stays human.</h3><p>Incomplete verification blocks approval before the brief can be shared.</p></article>
+    <article class="view"><span>06 / METHOD & SAFETY</span><h3>Limits remain visible.</h3><p>No diagnosis, treatment advice, invented outcomes, or hidden clinical claims.</p></article>
+  </div></div></section>
+
+  <footer><div class="shell foot"><span>PHIL | Prototype experience</span><span>Built by <a href="https://www.linkedin.com/in/imanikir/" target="_blank" rel="noreferrer">Imani</a></span></div></footer>
+
+  <script>
+    (function(){const root=document.documentElement,button=document.getElementById('themeToggle'),label=document.getElementById('themeLabel');const saved=localStorage.getItem('phil-theme');const systemDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;function apply(t){root.setAttribute('data-theme',t);localStorage.setItem('phil-theme',t);label.textContent=t==='dark'?'Light mode':'Dark mode';document.querySelector('meta[name="theme-color"]').setAttribute('content',t==='dark'?'#0b100f':'#f4f0e7')}apply(saved||(systemDark?'dark':'light'));button.addEventListener('click',()=>apply(root.getAttribute('data-theme')==='dark'?'light':'dark'))})();
+  </script>
+</body>
+</html>
