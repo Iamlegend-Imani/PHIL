@@ -7,9 +7,9 @@
 
 > Your health is not fragmented. Your health data is.
 
-[Explore the live prototype](https://phil-health-map.imani-kirika116.chatgpt.site) · [Watch the 90-second walkthrough](public/PHIL_90_Second_Walkthrough.mp4) · [Download the one-page brief](public/PHIL_Project_Brief.pdf)
+[Explore the PHIL site](https://iamlegend-imani.github.io/PHIL/) · [Watch the 90-second walkthrough](public/PHIL_90_Second_Walkthrough.mp4) · [Download the one-page brief](public/PHIL_Project_Brief.pdf)
 
-![PHIL prototype overview](docs/assets/prototype-hero.jpg)
+![PHIL prototype overview](docs/images/prototype-hero.jpg)
 
 PHIL is a patient-controlled context layer that turns scattered health information and lived experience into a clear, source-aware brief for a better clinical conversation.
 
@@ -77,18 +77,18 @@ No user outcomes, adoption numbers, clinical improvements, or practitioner endor
 - [Roadmap](ROADMAP.md)
 - [Repository setup and public description](REPOSITORY_SETUP.md)
 - [90-second walkthrough script](WALKTHROUGH_SCRIPT.md)
-- [90-second walkthrough video](public/demo/PHIL_90_Second_Walkthrough.mp4)
+- [90-second walkthrough video](public/PHIL_90_Second_Walkthrough.mp4)
 - [Walkthrough captions](WALKTHROUGH_CAPTIONS.srt)
 
 ### Prototype captures
 
 | Context map | Human review |
 | --- | --- |
-| ![PHIL context map](docs/assets/evidence-workbench.jpg) | ![PHIL decision record](docs/assets/decision-record.jpg) |
+| ![PHIL context map](docs/images/evidence-workbench.jpg) | ![PHIL decision record](docs/images/decision-record.jpg) |
 
 ## Access and permitted use
 
-The live prototype and repository materials may be viewed for portfolio evaluation, research review, and demonstration. The source is not open source. Copying, cloning, reuse, modification, redistribution, commercial use, and creation of derivative works require prior written permission. See the [proprietary notice](LICENSE).
+The public site and repository materials may be viewed for portfolio evaluation, research review, and demonstration. The source is not open source. Copying, cloning, reuse, modification, redistribution, commercial use, and creation of derivative works require prior written permission. See the [proprietary notice](LICENSE).
 
 ## Technology
 
@@ -97,6 +97,7 @@ The live prototype and repository materials may be viewed for portfolio evaluati
 - Next.js-compatible Vinext runtime
 - CSS-first responsive interface
 - Cloudflare-compatible production build
+- Static GitHub Pages public thesis and evidence site
 
 The prototype deliberately uses fictional local state. It does not collect, store, or transmit personal health information.
 
