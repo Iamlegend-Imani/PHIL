@@ -7,7 +7,7 @@
 
 > Your health is not fragmented. Your health data is.
 
-[Explore the PHIL site](https://iamlegend-imani.github.io/PHIL/) · [View the prototype experience](https://iamlegend-imani.github.io/PHIL/prototype.html) · [Watch the 90-second walkthrough](public/PHIL_90_Second_Walkthrough.mp4) · [Download the one-page brief](public/PHIL_Project_Brief.pdf) [Explore the PHIL site Again]([https://iamlegend-imani.github.io/PHIL](https://phil-health-intelligence.vercel.app/)
+[Explore the PHIL site](https://iamlegend-imani.github.io/PHIL/) · [View the prototype experience](https://iamlegend-imani.github.io/PHIL/prototype.html) · [Watch the 90-second walkthrough](public/PHIL_90_Second_Walkthrough.mp4) · [Download the one-page brief](public/PHIL_Project_Brief.pdf). [Explore the PHIL site Again](https://phil-health-intelligence.vercel.app)
 
 PHIL is a patient-controlled context layer that turns scattered health information and lived experience into a clear, source-aware brief for a better clinical conversation.
 
